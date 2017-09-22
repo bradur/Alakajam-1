@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameManager
+  - SoundManager
+  - CursorManager
+  - UIManager
+  - KeyManager
+  - CrossbowBoltManager
   layers:
   - Default
   - TransparentFX
