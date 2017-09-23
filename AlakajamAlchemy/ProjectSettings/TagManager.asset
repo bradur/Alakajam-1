@@ -10,6 +10,8 @@ TagManager:
   - UIManager
   - KeyManager
   - CrossbowBoltManager
+  - LevelManager
+  - PlayerManager
   layers:
   - Default
   - TransparentFX

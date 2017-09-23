@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="64" tileheight="64" nextobjectid="6">
+ <tileset firstgid="1" name="spritesheet" tilewidth="64" tileheight="64" tilecount="16" columns="4">
+  <image source="../Images/spritesheet.png" width="256" height="256"/>
+ </tileset>
+ <layer name="Grass" width="50" height="50">
+  <properties>
+   <property name="Type" value="1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0TEOACAMAkDq/x/t2t1BbW64sEKoJAUAAADwsNXc7nK6o+evpvwBAAAAAMyzAa4JCc0=
+  </data>
+ </layer>
+ <objectgroup name="Spawn">
+  <properties>
+   <property name="Type" value="1"/>
+  </properties>
+  <object id="4" gid="16" x="1472" y="1472" width="64" height="64"/>
+ </objectgroup>
+</map>

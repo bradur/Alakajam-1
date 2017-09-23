@@ -1,8 +1,7 @@
-// Date   : 29.07.2017 08:16
-// Project: In Charge of Power
 // Author : bradur
 
 using UnityEngine;
+using TiledSharp;
 
 public class Tools : MonoBehaviour
 {
@@ -23,5 +22,14 @@ public class Tools : MonoBehaviour
             result = -1;
         }
         return result;
+    }
+
+    public static string GetProperty (PropertyDict properties, string property)
+    {
+        if (properties.ContainsKey(property))
+        {
+            return properties[property];
+        }
+        return null;
     }
 }

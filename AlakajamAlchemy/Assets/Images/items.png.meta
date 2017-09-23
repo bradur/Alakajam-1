@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: e322510e2fa7ec7429e1ac830a3dd011
-timeCreated: 1506123129
+guid: 400dd301238b83f4996cf6a10fa5a20b
+timeCreated: 1506123122
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: grass
+    21300000: bolt
+    21300002: items_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -100,7 +101,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grass
+      name: bolt
       rect:
         serializedVersion: 2
         x: 0
@@ -108,7 +109,21 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: items_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

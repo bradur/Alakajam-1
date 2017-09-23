@@ -5,6 +5,7 @@ using TiledSharp;
 public enum LayerType
 {
     None,
+    Ground
 }
 
 [RequireComponent(typeof(Mesh))]
