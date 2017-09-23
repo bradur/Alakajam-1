@@ -12,20 +12,20 @@ public class PlayerMove : MonoBehaviour
     //private Rigidbody rigidBody;
     private Rigidbody2D rigidBody;
 
-    [Range(0.2f, 50f)]
+    [Range(0.2f, 200f)]
     [SerializeField]
     private float forwardSpeed = 1f;
 
-    [Range(0.2f, 50f)]
+    [Range(0.2f, 200f)]
     [SerializeField]
     private float sprintSpeed = 1f;
 
-    [Range(0.2f, 50f)]
+    [Range(0.2f, 200f)]
     [SerializeField]
     private float strafeSpeed = 1f;
 
 
-    [Range(0.2f, 50f)]
+    [Range(0.2f, 200f)]
     [SerializeField]
     private float backwardSpeed = 1f;
 
@@ -52,7 +52,6 @@ public class PlayerMove : MonoBehaviour
         }
 
         float verticalAxis = Input.GetAxis("Vertical");
-
         if (verticalAxis > 0)
         {
             animator.SetBool("Moving", true);

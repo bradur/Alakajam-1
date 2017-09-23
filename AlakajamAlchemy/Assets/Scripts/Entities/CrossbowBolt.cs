@@ -23,4 +23,13 @@ public class CrossbowBolt : MonoBehaviour {
     {
         Destroy(gameObject);
     }
+
+    private void Update()
+    {
+        if (rigidBody.velocity.magnitude < 0.2f)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Item");
+            Destroy(this);
+        }
+    }
 }
