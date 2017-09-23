@@ -18,4 +18,9 @@ public class CrossbowBolt : MonoBehaviour {
     {
         rigidBody.AddForce(transform.up * speed, ForceMode2D.Impulse);
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Destroy(gameObject);
+    }
 }

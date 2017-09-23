@@ -79,7 +79,11 @@ public class LevelManager : MonoBehaviour {
             foreach (TmxObjectGroup.TmxObject groupObject in group.Objects)
             {
                 WorldObject worldObject = Instantiate(worldObjectPrefab);
-                worldObject.Init(Tools.IntParseFast(Tools.GetProperty(group.Properties, "Type")), groupObject);
+                worldObject.Init(
+                    Tools.GetProperty(group.Properties, "Object"),
+                    Tools.IntParseFast(Tools.GetProperty(group.Properties, "Type")),
+                    groupObject
+                );
             }
         }
     }

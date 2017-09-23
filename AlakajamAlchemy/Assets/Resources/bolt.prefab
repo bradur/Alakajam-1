@@ -23,7 +23,9 @@ GameObject:
   - component: {fileID: 114007588267110340}
   - component: {fileID: 50477136673803274}
   - component: {fileID: 114236040240371772}
-  m_Layer: 0
+  - component: {fileID: 70638965193238452}
+  - component: {fileID: 114693700372601060}
+  m_Layer: 9
   m_Name: bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,6 +65,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!70 &70638965193238452
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721161014239102}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: 0}
+  m_Size: {x: 0.06, y: 0.34}
+  m_Direction: 0
 --- !u!114 &114007588267110340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,6 +106,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 1, g: 1, b: 1, a: 0.441}
   outlineSize: 1
+--- !u!114 &114693700372601060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721161014239102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a8813d210ce1a4c84ed8e3f96a42b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  damageType: 1
 --- !u!212 &212509888244194166
 SpriteRenderer:
   m_ObjectHideFlags: 1

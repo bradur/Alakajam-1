@@ -7,7 +7,8 @@ using UnityEngine;
 public enum ObjectType
 {
     None,
-    Spawn
+    Spawn,
+    Object
 }
 
 public class WorldObject : MonoBehaviour {
@@ -17,7 +18,7 @@ public class WorldObject : MonoBehaviour {
     [SerializeField]
     private int unitSize = 64;
 
-    public void Init(int type, TiledSharp.TmxObjectGroup.TmxObject worldObject)
+    public void Init(string objectName, int type, TiledSharp.TmxObjectGroup.TmxObject worldObject)
     {
         objectType = (ObjectType)type;
         if (objectType == ObjectType.Spawn)
@@ -27,6 +28,15 @@ public class WorldObject : MonoBehaviour {
                 -(float) worldObject.Y / unitSize - 4,
                 0f
             ));
+        } else if (objectType == ObjectType.Object)
+        {
+            GameObject spawnThisObjectHere = Instantiate((GameObject)Resources.Load(objectName));
+            spawnThisObjectHere.transform.SetParent(transform);
+            spawnThisObjectHere.transform.position = new Vector3 (
+                (float)worldObject.X / unitSize,
+                -(float)worldObject.Y / unitSize - 4,
+                0f
+            );
         }
     }
 

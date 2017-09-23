@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 185525450}
   - component: {fileID: 185525449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 393379999}
   - component: {fileID: 393380000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Swing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 637536433}
   - component: {fileID: 637536434}
   - component: {fileID: 637536437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924995701}
   - component: {fileID: 924995702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1143484647}
   - component: {fileID: 1143484648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}

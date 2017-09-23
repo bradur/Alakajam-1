@@ -12,6 +12,7 @@ TagManager:
   - CrossbowBoltManager
   - LevelManager
   - PlayerManager
+  - Mob
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Damage
   - 
   - 
   - 
