@@ -5,31 +5,51 @@
 using UnityEngine;
 using System.Collections;
 
-public enum ItemType
-{
-    None,
-    Bolt,
-    BunnyFoot
-}
-
-[System.Serializable]
-public class InventoryItem : System.Object
-{
-    public string name;
-    public Sprite sprite;
-    public int value = 1;
-    public ItemType type;
-}
-
 public class WorldItem : MonoBehaviour {
+
+    [SerializeField]
+    private ItemType itemType;
+    private SpriteRenderer sr;
+    private InventoryItem item;
+
+    [SerializeField]
+    [Range(-2f, -0.1f)]
+    private float randomXMin;
+
+    [SerializeField]
+    [Range(0.1f, 2f)]
+    private float randomXMax;
     
     [SerializeField]
-    private ItemType item;
+    [Range(-2f, -0.1f)]
+    private float randomYMin;
+
+    [SerializeField]
+    [Range(0.1f, 2f)]
+    private float randomYMax;
+
+    public void Init (InventoryItem inventoryItem, Vector3 position, bool randomizePosition)
+    {
+        item = inventoryItem;
+        itemType = inventoryItem.type;
+        sr = GetComponent<SpriteRenderer>();
+        sr.sprite = item.sprite;
+        if (randomizePosition)
+        {
+            position.x = position.x + Random.Range(randomXMin, randomXMax);
+            position.y = position.y + Random.Range(randomYMin, randomYMax);
+        }
+        transform.position = position;
+    }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {
+            if (item == null)
+            {
+                item = ItemManager.main.GetItem(itemType);
+            }
             PlayerInventoryManager.main.Pickup(item);
             Destroy(gameObject);
         }

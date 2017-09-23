@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Mob : MonoBehaviour {
 
@@ -13,6 +14,9 @@ public class Mob : MonoBehaviour {
 
     [SerializeField]
     private GetHitEffect getHitEffectPrefab;
+
+    [SerializeField]
+    private List<ItemType> certainDrops;
 
 
     private void Start()
@@ -38,8 +42,14 @@ public class Mob : MonoBehaviour {
         }
     }
 
+    void DropCertainItems()
+    {
+        ItemManager.main.DropItems(certainDrops, transform.position, true);
+    }
+
     void Die (DamageType type)
     {
+        DropCertainItems();
         Destroy(gameObject);
     }
 

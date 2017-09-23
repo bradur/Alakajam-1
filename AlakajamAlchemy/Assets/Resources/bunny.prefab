@@ -126,6 +126,7 @@ MonoBehaviour:
   hitPoints: 5
   getHitEffectPrefab: {fileID: 114988201679394510, guid: 04762118147f5284398965c7c56de111,
     type: 2}
+  certainDrops: 0200000002000000
 --- !u!212 &212836543020494944
 SpriteRenderer:
   m_ObjectHideFlags: 1

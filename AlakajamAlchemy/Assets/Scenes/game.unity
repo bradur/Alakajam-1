@@ -364,6 +364,65 @@ PolygonCollider2D:
       - {x: -0.14032297, y: 0.15682882}
       - {x: -0.09945732, y: 0.13593677}
       - {x: -0.028698878, y: 0.16831677}
+--- !u!1 &354246755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 354246757}
+  - component: {fileID: 354246756}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &354246756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 354246755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c037675978e3ceb4da7082af87dc0bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldItemPrefab: {fileID: 114218155601078432, guid: afff7ff40731ad0408f6646926f98f21,
+    type: 2}
+  items:
+  - name: Bolt
+    sprite: {fileID: 21300000, guid: 400dd301238b83f4996cf6a10fa5a20b, type: 3}
+    value: 1
+    type: 1
+  - name: Rabbit's Foot
+    sprite: {fileID: 21300004, guid: 400dd301238b83f4996cf6a10fa5a20b, type: 3}
+    value: 5
+    type: 2
+  - name: 
+    sprite: {fileID: 0}
+    value: 0
+    type: 0
+  - name: 
+    sprite: {fileID: 0}
+    value: 0
+    type: 0
+--- !u!4 &354246757
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 354246755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.20977, y: -18.071526, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &393379998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,48 +1309,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1001 &1361073564
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4613058105083064, guid: 04762118147f5284398965c7c56de111, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 20.20977
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613058105083064, guid: 04762118147f5284398965c7c56de111, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -18.071526
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613058105083064, guid: 04762118147f5284398965c7c56de111, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613058105083064, guid: 04762118147f5284398965c7c56de111, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613058105083064, guid: 04762118147f5284398965c7c56de111, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613058105083064, guid: 04762118147f5284398965c7c56de111, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613058105083064, guid: 04762118147f5284398965c7c56de111, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613058105083064, guid: 04762118147f5284398965c7c56de111, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 04762118147f5284398965c7c56de111, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1833755412
 GameObject:
   m_ObjectHideFlags: 0

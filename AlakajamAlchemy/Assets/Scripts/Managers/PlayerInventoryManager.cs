@@ -22,8 +22,8 @@ public class PlayerInventoryManager : MonoBehaviour {
         }
     }
 
-    public void Pickup(ItemType item)
+    public void Pickup(InventoryItem item)
     {
-        Debug.Log(string.Format("Picked up {0}", item));
+        Debug.Log(string.Format("Picked up {0}", item.name));
     }
 }
