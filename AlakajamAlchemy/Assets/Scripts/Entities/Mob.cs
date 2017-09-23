@@ -11,6 +11,14 @@ public class Mob : MonoBehaviour {
     [Range(1, 50)]
     private int hitPoints = 5;
 
+    [SerializeField]
+    private GetHitEffect getHitEffectPrefab;
+
+
+    private void Start()
+    {
+    }
+
     public void GetHit(DamageSource damageSource)
     {
         if (damageSource == null)
@@ -18,6 +26,12 @@ public class Mob : MonoBehaviour {
             return;
         }
         hitPoints -= damageSource.Damage;
+        if (getHitEffectPrefab != null)
+        {
+            GetHitEffect getHitEffect = Instantiate(getHitEffectPrefab);
+            getHitEffect.transform.position = transform.position;
+            getHitEffect.transform.rotation = transform.rotation;
+        }
         if (hitPoints <= 0)
         {
             Die(damageSource.Type);
