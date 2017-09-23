@@ -15,8 +15,11 @@ public class PlayerShoot : MonoBehaviour {
     [SerializeField]
     Transform boltPosition;
 
-    void Start () {
-    
+    PlayerInventoryManager pim;
+
+    void Start()
+    {
+        pim = GetComponent<PlayerInventoryManager>();
     }
 
     void Update ()
@@ -33,9 +36,13 @@ public class PlayerShoot : MonoBehaviour {
 
     public void Shoot()
     {
-        armsSr.enabled = false;
-        crossBowArmsSr.enabled = true;
-        CrossbowBoltManager.main.SpawnBolt(boltPosition.position, transform.rotation);
+        if (pim.CanConsume(ItemType.Bolt) && UIManager.main.UseHotBarItem(HotbarItem.Right))
+        {
+            pim.ConsumeOne(ItemType.Bolt);
+            armsSr.enabled = false;
+            crossBowArmsSr.enabled = true;
+            CrossbowBoltManager.main.SpawnBolt(boltPosition.position, transform.rotation);
+        }
     }
 
     public void StopShooting()

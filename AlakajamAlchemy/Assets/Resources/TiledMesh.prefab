@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f394ae4ef8175284dbbef24ca43e208b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilesPerSide: 8
+  tilesPerSide: 4
   unitSize: 1
   wallPrefab: {fileID: 0}
   waterPrefab: {fileID: 0}

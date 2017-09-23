@@ -28,8 +28,11 @@ public class PlayerSwing : MonoBehaviour {
 
     public void Swing()
     {
-        animator.SetTrigger("Swing");
-        arms.enabled = false;
+        if (UIManager.main.UseHotBarItem(HotbarItem.Left))
+        {
+            animator.SetTrigger("Swing");
+            arms.enabled = false;
+        }
     }
 
     public void StopSwing()

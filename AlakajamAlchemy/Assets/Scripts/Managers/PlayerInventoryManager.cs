@@ -7,23 +7,28 @@ using System.Collections;
 
 public class PlayerInventoryManager : MonoBehaviour {
 
-    public static PlayerInventoryManager main;
-
-    void Awake()
-    {
-        if (GameObject.FindGameObjectsWithTag("PlayerInventoryManager").Length == 0)
-        {
-            main = this;
-            gameObject.tag = "PlayerInventoryManager";
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public void Pickup(InventoryItem item)
     {
-        Debug.Log(string.Format("Picked up {0}", item.name));
+        InventoryManager.main.AddItem(item.type);
+    }
+
+    public bool ConsumeOne(ItemType itemType)
+    {
+        if (CanConsume(itemType))
+        {
+            InventoryManager.main.ConsumeItem(itemType);
+            return true;
+        }
+        return false;
+    }
+
+    public bool CanConsume(ItemType itemType)
+    {
+        InventoryItem item = InventoryManager.main.GetItem(itemType);
+        if (item != null && item.count > 0)
+        {
+            return true;
+        }
+        return false;
     }
 }

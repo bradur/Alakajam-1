@@ -15,6 +15,7 @@ TagManager:
   - Mob
   - PlayerInventoryManager
   - ItemManager
+  - InventoryManager
   layers:
   - Default
   - TransparentFX

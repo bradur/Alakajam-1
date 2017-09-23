@@ -5,7 +5,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class CrossbowBolt : MonoBehaviour {
+public class CrossbowBolt : MonoBehaviour
+{
 
     [SerializeField]
     private Rigidbody2D rigidBody;
@@ -14,7 +15,7 @@ public class CrossbowBolt : MonoBehaviour {
     [Range(0.2f, 50f)]
     private float speed;
 
-    public void Shoot ()
+    public void Shoot()
     {
         rigidBody.AddForce(transform.up * speed, ForceMode2D.Impulse);
     }

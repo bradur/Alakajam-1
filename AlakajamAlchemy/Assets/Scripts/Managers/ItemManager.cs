@@ -19,6 +19,7 @@ public class InventoryItem : System.Object
     public string name;
     public Sprite sprite;
     public int value = 1;
+    public int count = 1;
     public ItemType type;
 }
 
