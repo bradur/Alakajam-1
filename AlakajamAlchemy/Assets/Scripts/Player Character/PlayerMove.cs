@@ -5,7 +5,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerMove : MonoBehaviour {
+public class PlayerMove : MonoBehaviour
+{
 
     private Vector3 direction;
     //private Rigidbody rigidBody;
@@ -44,7 +45,8 @@ public class PlayerMove : MonoBehaviour {
         if (horizontalAxis > 0)
         {
             rigidBody.AddForce(transform.right * strafeSpeed, ForceMode2D.Force);
-        } else if (horizontalAxis < 0)
+        }
+        else if (horizontalAxis < 0)
         {
             rigidBody.AddForce(-transform.right * strafeSpeed, ForceMode2D.Force);
         }
@@ -53,15 +55,17 @@ public class PlayerMove : MonoBehaviour {
 
         if (verticalAxis > 0)
         {
-            animator.SetTrigger("Move");
+            animator.SetBool("Moving", true);
             rigidBody.AddForce(transform.up * forwardSpeed, ForceMode2D.Force);
-        } else
-        {
-            animator.SetTrigger("Stop");
         }
-        /*else if (verticalAxis < 0)
+        else if (verticalAxis < 0)
         {
-            rigidBody.AddForce(-transform.right * forwardSpeed, ForceMode2D.Force);
-        }*/
+            rigidBody.AddForce(-transform.up * backwardSpeed, ForceMode2D.Force);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
+
     }
 }

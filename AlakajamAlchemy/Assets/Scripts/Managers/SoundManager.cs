@@ -34,6 +34,9 @@ public class SoundManager : MonoBehaviour {
         {
             musicSource.Pause();
             UIManager.main.ToggleMusic();
+        } else
+        {
+            musicSource.Play();
         }
     }
 

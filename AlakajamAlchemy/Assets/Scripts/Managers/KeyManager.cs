@@ -12,8 +12,8 @@ public enum Action
     MoveBackward,
     StrafeLeft,
     StrafeRight,
-    ShootBow
-    //SwingSword,
+    ShootBow,
+    SwingSword
 }
 
 [System.Serializable]

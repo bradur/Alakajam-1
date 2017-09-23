@@ -16,6 +16,6 @@ public class CrossbowBolt : MonoBehaviour {
 
     public void Shoot ()
     {
-        rigidBody.AddForce(transform.up * speed, ForceMode2D.Force);
+        rigidBody.AddForce(transform.up * speed, ForceMode2D.Impulse);
     }
 }

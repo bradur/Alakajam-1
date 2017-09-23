@@ -55,7 +55,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_Materials: []
+  m_Materials:
+  - {fileID: 2100000, guid: df7e950064605224e9d11eade68c00a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f394ae4ef8175284dbbef24ca43e208b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilesPerSide: 4
+  tilesPerSide: 8
   unitSize: 1
   wallPrefab: {fileID: 0}
   waterPrefab: {fileID: 0}

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212509888244194166}
   - component: {fileID: 114007588267110340}
   - component: {fileID: 50477136673803274}
+  - component: {fileID: 114236040240371772}
   m_Layer: 0
   m_Name: bolt
   m_TagString: Untagged
@@ -53,8 +54,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.2
-  m_LinearDrag: 0
+  m_Mass: 2
+  m_LinearDrag: 4.71
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -75,6 +76,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 50477136673803274}
   speed: 50
+--- !u!114 &114236040240371772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721161014239102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcf6c7f1d63ac848a457d3fd271ec3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 0.441}
+  outlineSize: 1
 --- !u!212 &212509888244194166
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -88,7 +102,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5b0bc317862dc5642808511fe7d4ce3c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

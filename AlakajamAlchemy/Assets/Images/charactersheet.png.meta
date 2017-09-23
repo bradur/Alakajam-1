@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7eba9236174b48c45b229e0bd688fcd5
-timeCreated: 1506121124
+timeCreated: 1506165564
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,11 @@ TextureImporter:
     21300008: armswalk1
     21300010: armswalk2
     21300012: armscrossbow
+    21300014: armsshoot
+    21300016: armsswing1
+    21300018: armsswing2
+    21300020: armsswing3
+    21300022: armsswing4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -190,7 +195,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: armscrossbow
+      name: armsshoot
       rect:
         serializedVersion: 2
         x: 0
@@ -198,7 +203,63 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.59514093, y: 0.4229808}
+      pivot: {x: 0.58896816, y: 0.4320402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: armsswing1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: armsswing2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: armsswing3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: armsswing4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
