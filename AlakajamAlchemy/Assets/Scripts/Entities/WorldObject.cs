@@ -26,7 +26,7 @@ public class WorldObject : MonoBehaviour {
             {
                 PlayerManager.main.SpawnPlayer(new Vector3(
                     (float) worldObject.X / unitSize,
-                    -(float) worldObject.Y / unitSize - 1f,
+                    -(float) worldObject.Y / unitSize + 1f,
                     0f
                 ));
             } else if (objectType == ObjectType.Object)

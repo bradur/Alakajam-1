@@ -51,7 +51,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4371179442362308}
+  - component: {fileID: 114634137765161360}
   - component: {fileID: 95714875897079220}
+  - component: {fileID: 114018844528099702}
+  - component: {fileID: 70703040017777522}
+  - component: {fileID: 50908259591122390}
   m_Layer: 0
   m_Name: Alchemist
   m_TagString: Untagged
@@ -66,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957353751083414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.815, z: 0}
+  m_LocalPosition: {x: -18.3, y: 53.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4566983095193514}
@@ -100,6 +104,41 @@ Transform:
   m_Father: {fileID: 4371179442362308}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50908259591122390
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957353751083414}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.75
+  m_LinearDrag: 1.72
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 2
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!70 &70703040017777522
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957353751083414}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0025754077, y: -0.041146193}
+  m_Size: {x: 0.40209046, y: 0.20626837}
+  m_Direction: 1
 --- !u!95 &95714875897079220
 Animator:
   serializedVersion: 3
@@ -117,6 +156,154 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114018844528099702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957353751083414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e800e6c6e07519a4fbc49e3b2108b200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveIntervalMax: 8.05
+  moveIntervalMin: 6.1
+  speed: 50
+  impulseSpeed: 1.97
+  impulseFleeSpeed: 0.34
+--- !u!114 &114634137765161360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957353751083414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c91831902607e43b838d7cbaa8f757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogs:
+  - messages:
+    - <i>Per aspera...</i>
+    - Hello young... Whatever you are! What brings you to my humble abode?
+    - 'A love potion you say? It is no simple feat! You see, <b>To Brew A Love Potion...</b>
+
+      <i>Ahem.</i>'
+    - '<i>Give your love a violet, it will make them blue.
+
+
+      Give your love a rose, roses tell it true.
+
+
+      Give your love a lotus, there is no finer truth.
+
+
+      Give your love an orchid, it will be worth it.</i>
+
+'
+    - "<i>\rLegs from a frog to make your heart leap.\n \r\nA dash of luck from a
+      rabbit's foot.\n\r\nThe bones of your enemies...\r\n\n</i>\r\n\n... \"to show
+      you're not weak\"? \"so that you won't have to speak\"? Bah, I can't remember.
+      You get the gist."
+    - '... "to show you''re not weak"? "so that you won''t have to speak"? Bah, I
+      can''t remember. You get the gist.'
+    - 'Let''s start easy. Go fetch me some violets. Five of them. I''ll need three
+      pairs of frog legs too.
+
+      You can find them northwest, near the pond.'
+    idleMessages:
+    - <i>Some parsley... Yes... Rosemary? Sure. Needs a little bit of sage. Finish
+      it up with some thyme...</i>
+    - Huh? Go get me 5 violets and 3 pairs of frog legs! NORTHEAST!
+    type: 1
+    finishMessage: Well done! Now, let's see what's next...
+    requirementToAdvance:
+      items:
+      - name: Violet
+        sprite: {fileID: 21300000, guid: 110b5f52f2b2da34796db232792a5b94, type: 3}
+        value: 1
+        count: 5
+        type: 6
+      - name: Frogleg
+        sprite: {fileID: 21300000, guid: 110b5f52f2b2da34796db232792a5b94, type: 3}
+        value: 1
+        count: 3
+        type: 8
+  - messages:
+    - Next up I need some Orchids. I think I saw some when I was looking for mushrooms
+      southwest from here. Find me five, to be exact.
+    idleMessages:
+    - Eh?
+    - Orchids. South. West. Find me 5.
+    type: 4
+    finishMessage: Good job. On to the next one. How was it again? <i>Give your love
+      a lotus....</i>
+    requirementToAdvance:
+      items:
+      - name: Orchids
+        sprite: {fileID: 21300006, guid: 110b5f52f2b2da34796db232792a5b94, type: 3}
+        value: 1
+        count: 5
+        type: 4
+  - messages:
+    - 'So, lotuses. Loti. Lotuses. Whichever. You''ll find them northeast of here.
+
+      Also, kill some rabbits and bring me their feet.'
+    idleMessages:
+    - <i>Nimbocumulus... Lactobacillus rhamnosus... Somniculosus...</i>
+    - Huh?
+    - '5 loti and 10 bunny feet make me a very happy boy indeed.
+
+      Where? North and east, I think there!'
+    type: 5
+    finishMessage: Ah! We are getting closer!
+    requirementToAdvance:
+      items:
+      - name: Lotuses
+        sprite: {fileID: 21300006, guid: 110b5f52f2b2da34796db232792a5b94, type: 3}
+        value: 1
+        count: 5
+        type: 3
+      - name: Bunny feet
+        sprite: {fileID: 21300006, guid: 110b5f52f2b2da34796db232792a5b94, type: 3}
+        value: 1
+        count: 10
+        type: 2
+  - messages:
+    - Just roses and bones to go. As it happens, I hear the bandits have quite a rosebed!
+      They live southeast. Will they live when you get back?
+    idleMessages:
+    - <i>You'll come a-waltzing Matilda, with me...</i>
+    - 'Bones and roses.
+
+      South and east.
+
+      Five and five.'
+    type: 8
+    finishMessage: That's it! Now I can brew your potion!
+    requirementToAdvance:
+      items:
+      - name: Roses
+        sprite: {fileID: 21300002, guid: 110b5f52f2b2da34796db232792a5b94, type: 3}
+        value: 1
+        count: 5
+        type: 4
+      - name: Bones
+        sprite: {fileID: 21300000, guid: 3f23cf7198c521e40acb371b320e962f, type: 3}
+        value: 1
+        count: 5
+        type: 7
+  - messages:
+    - Your potion is ready!
+    idleMessages:
+    - Here's your potion. What will you do with it?
+    - '...'
+    type: 9
+    finishMessage: Thanks for playing.
+    requirementToAdvance:
+      items: []
+  dialogMinDistance: 2
 --- !u!212 &212155568742811060
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -149,7 +336,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 110
-  m_Sprite: {fileID: 21300008, guid: 330d10ae1eb842b4695c69fb9c6f1f5b, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 330d10ae1eb842b4695c69fb9c6f1f5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

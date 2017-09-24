@@ -68,10 +68,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540b6bba16b3b9549ad6cc13d37fc4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 5
+  hitPoints: 1
   getHitEffectPrefab: {fileID: 114548332376410862, guid: 869b3b0ebc9433447b576e245f064722,
     type: 2}
   certainDrops: 04000000
+  willFlee: 0
+  damageInterval: 0.5
 --- !u!212 &212552580724853820
 SpriteRenderer:
   m_ObjectHideFlags: 1

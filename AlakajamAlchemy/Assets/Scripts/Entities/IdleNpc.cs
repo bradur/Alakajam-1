@@ -55,7 +55,6 @@ public class IdleNpc : MonoBehaviour {
 
     void Moving (ForceMode2D mode, float moveSpeed)
     {
-        
         rigidBody.AddForce(transform.up * moveSpeed, mode);
         animator.SetTrigger("Move");
         moving = true;

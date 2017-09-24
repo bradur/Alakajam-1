@@ -10,7 +10,8 @@ public enum HotbarItem
 {
     None,
     Left,
-    Right
+    Right,
+    Talk
 }
 
 public class UIHotbarItem : MonoBehaviour {
@@ -28,10 +29,16 @@ public class UIHotbarItem : MonoBehaviour {
     private float cooldownTimer;
 
     private bool inUse = false;
+    [SerializeField]
+    private bool useOnStart = true;
 
     void Start()
     {
-        Use();
+        if(useOnStart)
+        {
+            Use();
+
+        }
     }
 
     public bool Use ()
@@ -49,6 +56,20 @@ public class UIHotbarItem : MonoBehaviour {
     public void UpdateCount (int count)
     {
         txtComponent.text = count + "";
+    }
+
+    public void EnableInstantly ()
+    {
+        inUse = true;
+        cooldownTimer = 0.5f;
+    }
+
+    public void DisableInstantly()
+    {
+        inUse = false;
+        cooldownTimer = 0.5f;
+        imgComponent.enabled = true;
+        imgComponent.fillAmount = 1f;
     }
 
     void Update ()

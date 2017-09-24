@@ -76,6 +76,22 @@ public class InventoryManager : MonoBehaviour {
         }
     }
 
+
+    public void ConsumeItem(ItemType itemType, int count)
+    {
+        InventoryItem item = GetItem(itemType);
+        if (item != null)
+        {
+            item.count -= count;
+            UIManager.main.UpdateItemCount(item, item.count);
+            if (item.count <= 0)
+            {
+                RemoveItem(item);
+            }
+
+        }
+    }
+
     public void RemoveItem (InventoryItem item)
     {
         items.Remove(item);

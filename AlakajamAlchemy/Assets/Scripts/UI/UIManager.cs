@@ -70,11 +70,45 @@ public class UIManager : MonoBehaviour
         return false;
     }
 
+    [SerializeField]
+    private UIDialogueManager uiDialogueManager;
+
+    public void ShowMessage(string message)
+    {
+        uiDialogueManager.ShowDialogue(message);
+    }
+
+    public void CloseDialog()
+    {
+        uiDialogueManager.CloseDialogue();
+    }
+
     /*[SerializeField]
     private HUDToggle hudMusic;*/
 
     /*[SerializeField]
     private HUDToggle hudSfx;*/
+
+    [SerializeField]
+    private UIHotbarItem talkHotBarItem;
+    private bool allowTalking = false;
+    public void AllowTalking ()
+    {
+        if (!allowTalking)
+        {
+            allowTalking = true;
+            talkHotBarItem.Use();
+        }
+    }
+
+    public void UnallowTalking ()
+    {
+        if (allowTalking)
+        {
+            allowTalking = false;
+            talkHotBarItem.DisableInstantly();
+        }
+    }
 
     public void ToggleMusic()
     {
