@@ -18,17 +18,46 @@ public class Mob : MonoBehaviour {
     [SerializeField]
     private List<ItemType> certainDrops;
 
+    [SerializeField]
+    private bool willFlee = false;
+
+    private  IdleNpc npc;
+
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float damageInterval = 0.5f;
+
+    bool takingDamage = false;
+    private float damageTimer = 0f;
 
     private void Start()
     {
+        if (willFlee)
+        {
+            npc = GetComponent<IdleNpc>();
+        }
+    }
+
+    private void Update()
+    {
+        if (takingDamage)
+        {
+            damageTimer += Time.deltaTime;
+            if (damageTimer > damageInterval)
+            {
+                takingDamage = false;
+                damageTimer = 0f;
+            }
+        }
     }
 
     public void GetHit(DamageSource damageSource)
     {
-        if (damageSource == null)
+        if (takingDamage || damageSource == null)
         {
             return;
         }
+        takingDamage = true;
         hitPoints -= damageSource.Damage;
         if (getHitEffectPrefab != null)
         {
@@ -36,10 +65,21 @@ public class Mob : MonoBehaviour {
             getHitEffect.transform.position = transform.position;
             getHitEffect.transform.rotation = transform.rotation;
         }
+        Debug.Log("I took " + damageSource.Damage + " points of damage.");
         if (hitPoints <= 0)
         {
+            Debug.Log("I died because I have " + hitPoints + " HP!");
             Die(damageSource.Type);
+        } else if (willFlee)
+        {
+            Flee((Vector2)damageSource.transform.position);
+            Debug.Log("FLEEING!");
         }
+    }
+
+    void Flee(Vector2 from)
+    {
+        npc.Flee(from);
     }
 
     void DropCertainItems()

@@ -29,6 +29,10 @@ public class IdleNpc : MonoBehaviour {
     [Range(0.2f, 5f)]
     private float impulseSpeed;
 
+    [SerializeField]
+    [Range(0.2f, 5f)]
+    private float impulseFleeSpeed = 0.5f;
+
     private bool moving = false;
 
     void Start () {
@@ -37,11 +41,22 @@ public class IdleNpc : MonoBehaviour {
         RandomMove();
     }
 
-    void StartMoving ()
+    void StartMoving (ForceMode2D forceMode, float moveSpeed)
     {
-        ForceMode2D randomForce = Random.value > 0.5f ? ForceMode2D.Impulse : ForceMode2D.Force;
-        float movespeed = randomForce == ForceMode2D.Impulse ? impulseSpeed : speed;
-        rigidBody.AddForce(transform.up * movespeed, randomForce);
+        Moving(forceMode, moveSpeed);
+    }
+
+    void StartMoving()
+    {
+        ForceMode2D forceMode = Random.value > 0.5f ? ForceMode2D.Impulse : ForceMode2D.Force;
+        float moveSpeed = forceMode == ForceMode2D.Impulse ? impulseSpeed : speed;
+        Moving(forceMode, moveSpeed);
+    }
+
+    void Moving (ForceMode2D mode, float moveSpeed)
+    {
+        
+        rigidBody.AddForce(transform.up * moveSpeed, mode);
         animator.SetTrigger("Move");
         moving = true;
     }
@@ -59,14 +74,29 @@ public class IdleNpc : MonoBehaviour {
         transform.Rotate(randomDirection);
     }
 
-    void RandomMove ()
+    public void RandomMove ()
+    {
+        RandomizeDirection();
+        Move();
+    }
+
+    public void Flee (Vector2 from)
+    {
+        transform.up = -(from - (Vector2)transform.position).normalized;
+        idle = false;
+        moveTimer = 0f;
+        moveInterval = Random.Range(moveIntervalMin, moveIntervalMax);
+        StartMoving(ForceMode2D.Impulse, impulseFleeSpeed);
+    }
+
+    void Move()
     {
         idle = false;
-        RandomizeDirection();
         StartMoving();
         moveTimer = 0f;
         moveInterval = Random.Range(moveIntervalMin, moveIntervalMax);
     }
+
     void Update () {
         if (idle)
         {
