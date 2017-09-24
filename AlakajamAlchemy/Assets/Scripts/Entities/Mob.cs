@@ -30,6 +30,15 @@ public class Mob : MonoBehaviour {
     bool takingDamage = false;
     private float damageTimer = 0f;
 
+    private bool breeding = false;
+    [SerializeField]
+    [Range(2f, 10f)]
+    private float breedInterval = 2f;
+    private float breedTimer = 0f;
+    [SerializeField]
+    [Range(1, 20)]
+    private int maxBreedCount = 5;
+
     private void Start()
     {
         if (willFlee)
@@ -49,6 +58,28 @@ public class Mob : MonoBehaviour {
                 damageTimer = 0f;
             }
         }
+        if (breeding)
+        {
+            breedTimer += Time.deltaTime;
+            if (breedTimer > breedInterval)
+            {
+                maxBreedCount -= 1;
+                breedTimer = 0f;
+                Breed();
+                npc.RandomMove();
+                if (maxBreedCount < 1)
+                {
+                    breeding = false;
+                }
+            }
+        }
+    }
+
+    void Breed ()
+    {
+        Mob newMob = Instantiate(this);
+        newMob.transform.localScale *= 0.5f;
+        newMob.transform.position = transform.position - Vector3.up;
     }
 
     public void GetHit(DamageSource damageSource)
@@ -100,5 +131,16 @@ public class Mob : MonoBehaviour {
     void OnTriggerEnter2D (Collider2D collider)
     {
         GetHit(collider.GetComponent<DamageSource>());
+        CrossbowBolt bolt = collider.gameObject.GetComponent<CrossbowBolt>();
+        if (bolt != null && bolt.IsPotion)
+        {
+            Debug.Log("Breeding");
+            StartBreeding();
+        }
+    }
+
+    void StartBreeding ()
+    {
+        breeding = true;
     }
 }

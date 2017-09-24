@@ -13,6 +13,7 @@ public class PlayerInventoryManager : MonoBehaviour {
         InventoryManager.main.AddItem(item.type);
     }
 
+
     public bool ConsumeOne(ItemType itemType)
     {
         if (CanConsume(itemType))

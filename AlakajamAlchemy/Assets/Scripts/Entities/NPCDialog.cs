@@ -54,7 +54,7 @@ public class NPCDialog : MonoBehaviour
     private bool idleMessagesDone = false;
 
     [SerializeField]
-    private List<ItemType> rewards;
+    private List<InventoryItem> rewards;
 
     [SerializeField]
     [Range(0.5f, 10f)]

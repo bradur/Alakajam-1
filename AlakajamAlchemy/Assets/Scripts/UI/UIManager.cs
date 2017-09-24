@@ -43,7 +43,12 @@ public class UIManager : MonoBehaviour
         if (item.type == ItemType.Bolt)
         {
             UpdateCrossbowCount(count);
-        } else
+        }
+        else if (item.type == ItemType.LovePotion)
+        {
+            UpdatePotionCount(count);
+        }
+        else
         {
             uiInventoryManager.UpdateItemCount(item, count);
         }
@@ -52,6 +57,14 @@ public class UIManager : MonoBehaviour
     void UpdateCrossbowCount(int count)
     {
         rightHotbarItem.UpdateCount(count);
+    }
+
+    [SerializeField]
+    private UIHotbarItem potionHotbarItem;
+    void UpdatePotionCount(int count)
+    {
+
+        potionHotbarItem.UpdateCount(count);
     }
 
     [SerializeField]
@@ -66,8 +79,16 @@ public class UIManager : MonoBehaviour
             return leftHotbarItem.Use();
         } else if (hotbarItemType == HotbarItem.Right){
             return rightHotbarItem.Use();
+        } else if (hotbarItemType == HotbarItem.Potion)
+        {
+            return potionHotbarItem.Use();
         }
         return false;
+    }
+
+    public void ShowLovePotionHotbar()
+    {
+        potionHotbarItem.gameObject.SetActive(true);
     }
 
     [SerializeField]

@@ -57,6 +57,10 @@ public class InventoryManager : MonoBehaviour {
         {
             item = ItemManager.main.GetItem(itemType);
             items.Add(item);
+            if (item.type == ItemType.LovePotion)
+            {
+                UIManager.main.ShowLovePotionHotbar();
+            }
             UIManager.main.AddItem(item);
         }
     }

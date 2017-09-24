@@ -18,6 +18,10 @@ public class CrossbowBolt : MonoBehaviour
     [SerializeField]
     private Color inactiveColor;
 
+    [SerializeField]
+    private bool isPotion = false;
+    public bool IsPotion { get { return isPotion; } set { isPotion = value; } }
+
     public void Shoot()
     {
         rigidBody.AddForce(transform.up * speed, ForceMode2D.Impulse);

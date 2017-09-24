@@ -11,7 +11,8 @@ public enum HotbarItem
     None,
     Left,
     Right,
-    Talk
+    Talk,
+    Potion
 }
 
 public class UIHotbarItem : MonoBehaviour {

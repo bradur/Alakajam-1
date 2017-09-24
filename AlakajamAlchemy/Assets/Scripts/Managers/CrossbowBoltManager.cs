@@ -10,6 +10,8 @@ public class CrossbowBoltManager : MonoBehaviour {
     [SerializeField]
     private CrossbowBolt boltPrefab;
     [SerializeField]
+    private CrossbowBolt potionPrefab;
+    [SerializeField]
     private Transform container;
 
     public static CrossbowBoltManager main;
@@ -30,6 +32,16 @@ public class CrossbowBoltManager : MonoBehaviour {
     public void SpawnBolt (Vector3 startingPosition, Quaternion rotation)
     {
         CrossbowBolt newBolt = Instantiate(boltPrefab);
+        newBolt.transform.SetParent(container, false);
+        newBolt.transform.position = startingPosition;
+        newBolt.transform.rotation = rotation;
+        newBolt.Shoot();
+    }
+
+
+    public void SpawnBolt(Vector3 startingPosition, Quaternion rotation, bool isPotion)
+    {
+        CrossbowBolt newBolt = Instantiate(potionPrefab);
         newBolt.transform.SetParent(container, false);
         newBolt.transform.position = startingPosition;
         newBolt.transform.rotation = rotation;

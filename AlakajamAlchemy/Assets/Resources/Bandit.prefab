@@ -501,6 +501,8 @@ MonoBehaviour:
   certainDrops: 07000000
   willFlee: 0
   damageInterval: 0.216
+  breedInterval: 2
+  maxBreedCount: 1
 --- !u!114 &114882549417353702
 MonoBehaviour:
   m_ObjectHideFlags: 1

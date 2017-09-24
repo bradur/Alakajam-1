@@ -14,7 +14,8 @@ public enum Action
     StrafeRight,
     ShootBow,
     SwingSword,
-    Talk
+    Talk,
+    UsePotion
 }
 
 [System.Serializable]

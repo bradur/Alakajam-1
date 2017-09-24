@@ -82,4 +82,14 @@ public class ItemManager : MonoBehaviour
             worldItem.Init(GetItem(itemType), position, randomizePosition);
         }
     }
+
+    public void DropItems(List<InventoryItem> itemsToDrop, Vector3 position, bool randomizePosition)
+    {
+        foreach (InventoryItem item in itemsToDrop)
+        {
+            WorldItem worldItem = Instantiate(worldItemPrefab);
+            worldItem.transform.SetParent(transform);
+            worldItem.Init(item, position, randomizePosition);
+        }
+    }
 }
