@@ -16,6 +16,7 @@ TagManager:
   - PlayerInventoryManager
   - ItemManager
   - InventoryManager
+  - Flower
   layers:
   - Default
   - TransparentFX

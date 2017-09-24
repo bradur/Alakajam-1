@@ -25,7 +25,11 @@ public class CrossbowBolt : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Destroy(gameObject);
+        if (collider.gameObject.tag == "Mob" || collider.gameObject.tag == "Flower")
+        {
+            Destroy(gameObject);
+        }
+        rigidBody.velocity = Vector2.zero;
     }
 
     private void Update()

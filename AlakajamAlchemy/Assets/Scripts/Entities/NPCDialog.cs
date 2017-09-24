@@ -31,6 +31,7 @@ public class Dialog : System.Object
     [TextArea]
     public string finishMessage;
     public QuestRequirement requirementToAdvance;
+    public bool lastMessage = false;
 }
 
 [System.Serializable]
@@ -45,11 +46,15 @@ public class NPCDialog : MonoBehaviour
     [SerializeField]
     private List<Dialog> dialogs;
 
+    [SerializeField]
     private int currentDialog = 0;
     private int currentMessage = 0;
     private int currentIdleMessage = 0;
     private bool dialogDone = false;
     private bool idleMessagesDone = false;
+
+    [SerializeField]
+    private List<ItemType> rewards;
 
     [SerializeField]
     [Range(0.5f, 10f)]
@@ -64,6 +69,7 @@ public class NPCDialog : MonoBehaviour
         }
     }*/
     private bool activeDialog = false;
+    private bool questDone = false;
 
     private GameObject playerObject;
 
@@ -121,13 +127,20 @@ public class NPCDialog : MonoBehaviour
         {
             Dialog dialog = dialogs[currentDialog];
             PlayerInventoryManager pim = playerObject.GetComponent<PlayerInventoryManager>();
-            if (dialogs.Count > (currentDialog + 1) && ProcessRequirement(dialog.requirementToAdvance, pim))
+            if (!questDone && dialogDone && (dialog.requirementToAdvance.items.Count == 0 || ProcessRequirement(dialog.requirementToAdvance, pim)))
             {
-                pim.Consume(dialog.requirementToAdvance.items);
                 UIManager.main.ShowMessage(dialog.finishMessage);
-                activeDialog = true;
-                ResetDialog();
-                dialog = dialogs[currentDialog];
+                if (dialog.lastMessage)
+                {
+                    questDone = true;
+                    ItemManager.main.DropItems(rewards, transform.position, true);
+                } else
+                {
+                    pim.Consume(dialog.requirementToAdvance.items);
+                    activeDialog = true;
+                    ResetDialog();
+                    dialog = dialogs[currentDialog];
+                }
             }
             else
             {

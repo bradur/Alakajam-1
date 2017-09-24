@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 70101093067343420}
   m_Layer: 0
   m_Name: Frog
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveIntervalMax: 1.06
   moveIntervalMin: 0.29
-  speed: 33
+  speed: 24.7
   impulseSpeed: 0.35
-  impulseFleeSpeed: 1.55
+  impulseFleeSpeed: 3.13
 --- !u!114 &114838369341890040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540b6bba16b3b9549ad6cc13d37fc4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 5
+  hitPoints: 6
   getHitEffectPrefab: {fileID: 114988201679394510, guid: 462122ade1fceda42ba541cd2b30b3ff,
     type: 2}
   certainDrops: 08000000
