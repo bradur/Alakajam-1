@@ -10,7 +10,12 @@ public enum ItemType
 {
     None,
     Bolt,
-    BunnyFoot
+    BunnyFoot,
+    Lotus,
+    Orchid,
+    Rose,
+    Violet,
+    Bone
 }
 
 [System.Serializable]
