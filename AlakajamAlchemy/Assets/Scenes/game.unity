@@ -1724,6 +1724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 637536432}
   roundToDecimals: 2
+  clampMin: {x: 10, y: -93}
+  clampMax: {x: 89, y: -6}
 --- !u!1 &924995700
 GameObject:
   m_ObjectHideFlags: 0

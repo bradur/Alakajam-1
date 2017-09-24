@@ -13,6 +13,11 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField]
     private int roundToDecimals = 2;
 
+    [SerializeField]
+    private Vector2 clampMin;
+    [SerializeField]
+    private Vector2 clampMax;
+
     void Start () {
     
     }
@@ -22,6 +27,8 @@ public class CameraFollow : MonoBehaviour {
         newPos.z = transform.position.z;
         newPos.x = (float)System.Math.Round(newPos.x, roundToDecimals);
         newPos.y = (float)System.Math.Round(newPos.y, roundToDecimals);
+        newPos.x = Mathf.Clamp(newPos.x, clampMin.x, clampMax.x);
+        newPos.y = Mathf.Clamp(newPos.y, clampMin.y, clampMax.y);
         transform.position = newPos;
     }
 }
