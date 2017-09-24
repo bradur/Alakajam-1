@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 400dd301238b83f4996cf6a10fa5a20b
-timeCreated: 1506184998
+timeCreated: 1506246271
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: bolt
     21300002: items_1
     21300004: rabbitfoot
+    21300006: froglegs
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -134,6 +135,20 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 63
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: froglegs
+      rect:
+        serializedVersion: 2
+        x: 127
         y: 192
         width: 64
         height: 64

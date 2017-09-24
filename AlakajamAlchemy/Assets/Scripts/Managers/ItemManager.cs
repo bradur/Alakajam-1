@@ -15,7 +15,8 @@ public enum ItemType
     Orchid,
     Rose,
     Violet,
-    Bone
+    Bone,
+    FrogLegs
 }
 
 [System.Serializable]

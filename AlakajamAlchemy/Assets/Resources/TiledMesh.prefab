@@ -109,5 +109,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilesPerSide: 4
   unitSize: 1
-  wallPrefab: {fileID: 0}
-  waterPrefab: {fileID: 0}

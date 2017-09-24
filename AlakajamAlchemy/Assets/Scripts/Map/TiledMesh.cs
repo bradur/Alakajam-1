@@ -5,7 +5,9 @@ using TiledSharp;
 public enum LayerType
 {
     None,
-    Ground
+    Ground,
+    Wall,
+    Water
 }
 
 [RequireComponent(typeof(Mesh))]
@@ -33,27 +35,21 @@ public class TiledMesh : MonoBehaviour
     private float unitSize = 1;
 
     private float tileSize;
-    private TmxMap map;
-
-    private Transform wallContainer;
-    private Transform waterContainer;
-
-    [SerializeField]
-    private GameObject wallPrefab;
-
-    [SerializeField]
-    private GameObject waterPrefab;
 
     private int width;
     private int height;
+
+    private Transform prefabContainer;
+    private GameObject prefab;
 
     private void Start()
     {
 
     }
 
-    public void Init(int width, int height, TmxLayer layer, Material material, float zPos)
+    public void Init(int width, int height, TmxLayer layer, Material material, float zPos, GameObject useThisPrefab, Transform useThisContainer)
     {
+        prefabContainer = useThisContainer;
         this.width = width;
         this.height = height;
         meshFilter = GetComponent<MeshFilter>();
@@ -62,6 +58,7 @@ public class TiledMesh : MonoBehaviour
         meshRenderer.sharedMaterial = material;
         tileSize = unitSize / tilesPerSide;
         CalculateTiles();
+        prefab = useThisPrefab;
         InitMesh(width, height);
         transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
         DrawMesh(width, height, layer);
@@ -115,7 +112,13 @@ public class TiledMesh : MonoBehaviour
                 }
 
                 numTiles += 1;
-                Vector3 currentPosition = new Vector3(xPos, startingPosition.y, yPos);
+                Vector3 currentPosition = new Vector3(xPos, startingPosition.y, -yPos-2f);
+                if (prefab != null)
+                {
+                    GameObject block = Instantiate(prefab);
+                    block.transform.SetParent(prefabContainer);
+                    block.transform.position = new Vector3(tile.X, -tile.Y, 0f);
+                }
                 DrawVertex(index + 2, currentPosition);
                 DrawVertex(index + 1, currentPosition, unitSize);
                 DrawVertex(index, currentPosition, unitSize, unitSize);

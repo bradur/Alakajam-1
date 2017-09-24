@@ -31,6 +31,15 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     private WorldObject worldObjectPrefab;
 
+    [SerializeField]
+    private GameObject wallPrefab;
+
+    [SerializeField]
+    private GameObject waterPrefab;
+
+    [SerializeField]
+    private Transform wallContainer;
+
     public static LevelManager main;
 
     [SerializeField]
@@ -69,22 +78,38 @@ public class LevelManager : MonoBehaviour {
         {
             TmxLayer layer = map.Layers[index];
             TiledMesh mesh = Instantiate(tiledMeshPrefab);
-            mesh.Init(map.Width, map.Height, layer, groundMaterial, runningZ);
+            
+            int layerType = Tools.IntParseFast(Tools.GetProperty(layer.Properties, "Type"));
+            mesh.name = (LayerType)layerType + " (Mesh)";
+            if (layerType == (int)LayerType.Ground)
+            {
+                mesh.Init(map.Width, map.Height, layer, groundMaterial, runningZ, null, null);
+            }
+            else if (layerType == (int)LayerType.Wall)
+            {
+                mesh.Init(map.Width, map.Height, layer, groundMaterial, runningZ, wallPrefab, wallContainer);
+            }
+            else if (layerType == (int)LayerType.Water)
+            {
+                mesh.Init(map.Width, map.Height, layer, groundMaterial, runningZ, waterPrefab, wallContainer);
+            }
             runningZ -= 0.1f;
             mesh.transform.SetParent(worldContainer, false);
+            mesh.transform.position = new Vector3(transform.position.x, transform.position.y - map.Height, transform.position.x);
         }
         for (int index = 0; index < map.ObjectGroups.Count; index += 1)
         {
             TmxObjectGroup group = map.ObjectGroups[index];
-            foreach (TmxObjectGroup.TmxObject groupObject in group.Objects)
-            {
-                WorldObject worldObject = Instantiate(worldObjectPrefab);
-                worldObject.Init(
-                    Tools.GetProperty(group.Properties, "Object"),
-                    Tools.IntParseFast(Tools.GetProperty(group.Properties, "Type")),
-                    groupObject
-                );
-            }
+            WorldObject worldObject = Instantiate(worldObjectPrefab);
+            int objectType = Tools.IntParseFast(Tools.GetProperty(group.Properties, "Type"));
+            string prefabType = Tools.GetProperty(group.Properties, "Object");
+            worldObject.name = prefabType + " (ObjectContainer)";
+
+            worldObject.Init(
+                prefabType,
+                objectType,
+                group
+            );
         }
     }
 

@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 50477136673803274}
   speed: 50
+  inactiveColor: {r: 0, g: 1, b: 0.048275948, a: 1}
 --- !u!114 &114130503500682860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcf6c7f1d63ac848a457d3fd271ec3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 0.441}
+  color: {r: 1, g: 1, b: 1, a: 1}
   outlineSize: 1
 --- !u!114 &114693700372601060
 MonoBehaviour:

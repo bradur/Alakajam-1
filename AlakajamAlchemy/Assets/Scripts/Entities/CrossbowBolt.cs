@@ -15,6 +15,9 @@ public class CrossbowBolt : MonoBehaviour
     [Range(0.2f, 50f)]
     private float speed;
 
+    [SerializeField]
+    private Color inactiveColor;
+
     public void Shoot()
     {
         rigidBody.AddForce(transform.up * speed, ForceMode2D.Impulse);
@@ -30,6 +33,7 @@ public class CrossbowBolt : MonoBehaviour
         if (rigidBody.velocity.magnitude < 0.2f)
         {
             gameObject.layer = LayerMask.NameToLayer("Item");
+            GetComponent<SpriteOutline>().color = inactiveColor;
             Destroy(this);
         }
     }

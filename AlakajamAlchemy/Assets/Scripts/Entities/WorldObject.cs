@@ -18,25 +18,27 @@ public class WorldObject : MonoBehaviour {
     [SerializeField]
     private int unitSize = 64;
 
-    public void Init(string objectName, int type, TiledSharp.TmxObjectGroup.TmxObject worldObject)
+    public void Init(string objectName, int type, TiledSharp.TmxObjectGroup objectGroup)
     {
         objectType = (ObjectType)type;
-        if (objectType == ObjectType.Spawn)
-        {
-            PlayerManager.main.SpawnPlayer(new Vector3(
-                (float) worldObject.X / unitSize,
-                -(float) worldObject.Y / unitSize - 4,
-                0f
-            ));
-        } else if (objectType == ObjectType.Object)
-        {
-            GameObject spawnThisObjectHere = Instantiate((GameObject)Resources.Load(objectName));
-            spawnThisObjectHere.transform.SetParent(transform);
-            spawnThisObjectHere.transform.position = new Vector3 (
-                (float)worldObject.X / unitSize,
-                -(float)worldObject.Y / unitSize - 4,
-                0f
-            );
+        foreach (TiledSharp.TmxObjectGroup.TmxObject worldObject in objectGroup.Objects) {
+            if (objectType == ObjectType.Spawn)
+            {
+                PlayerManager.main.SpawnPlayer(new Vector3(
+                    (float) worldObject.X / unitSize,
+                    -(float) worldObject.Y / unitSize - 1f,
+                    0f
+                ));
+            } else if (objectType == ObjectType.Object)
+            {
+                GameObject spawnThisObjectHere = Instantiate((GameObject)Resources.Load(objectName));
+                spawnThisObjectHere.transform.SetParent(transform);
+                spawnThisObjectHere.transform.position = new Vector3 (
+                    (float)worldObject.X / unitSize,
+                    -(float)worldObject.Y / unitSize,
+                    0f
+                );
+            }
         }
     }
 
