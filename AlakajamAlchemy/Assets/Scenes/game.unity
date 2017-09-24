@@ -1150,7 +1150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardSpeed: 112.7
   sprintSpeed: 159.2
-  strafeSpeed: 123.5
   backwardSpeed: 77.9
 --- !u!114 &637536436
 MonoBehaviour:
@@ -2581,7 +2580,7 @@ MonoBehaviour:
   txtComponent: {fileID: 0}
   colorVariable: {r: 0, g: 0, b: 0, a: 0}
   imgComponent: {fileID: 889624114}
-  cooldownTime: 4.01
+  cooldownTime: 0.1
 --- !u!1 &1833755412
 GameObject:
   m_ObjectHideFlags: 0

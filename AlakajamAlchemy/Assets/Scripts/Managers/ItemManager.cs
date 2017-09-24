@@ -54,7 +54,13 @@ public class ItemManager : MonoBehaviour
         {
             if (item.type == type)
             {
-                return item;
+                InventoryItem invItem = new InventoryItem();
+                invItem.name = item.name;
+                invItem.count = item.count;
+                invItem.value = item.value;
+                invItem.sprite = item.sprite;
+                invItem.type = item.type;
+                return invItem;
             }
         }
         return null;

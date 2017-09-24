@@ -67,12 +67,10 @@ public class InventoryManager : MonoBehaviour {
         if (item != null)
         {
             item.count -= 1;
+            UIManager.main.UpdateItemCount(item, item.count);
             if (item.count <= 0)
             {
                 RemoveItem(item);
-            } else
-            {
-                UIManager.main.UpdateItemCount(item, item.count);
             }
             
         }

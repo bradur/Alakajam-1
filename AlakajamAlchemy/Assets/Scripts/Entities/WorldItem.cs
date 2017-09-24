@@ -46,7 +46,6 @@ public class WorldItem : MonoBehaviour {
     {
         if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("player");
             if (item == null)
             {
                 item = ItemManager.main.GetItem(itemType);

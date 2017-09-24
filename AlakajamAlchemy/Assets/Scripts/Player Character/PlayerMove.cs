@@ -20,9 +20,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float sprintSpeed = 1f;
 
+    /*
     [Range(0.2f, 200f)]
     [SerializeField]
-    private float strafeSpeed = 1f;
+    private float strafeSpeed = 1f;*/
 
 
     [Range(0.2f, 200f)]
@@ -42,6 +43,7 @@ public class PlayerMove : MonoBehaviour
     {
         float horizontalAxis = Input.GetAxis("Horizontal");
 
+        /*
         if (horizontalAxis > 0)
         {
             rigidBody.AddForce(transform.right * strafeSpeed, ForceMode2D.Force);
@@ -49,7 +51,7 @@ public class PlayerMove : MonoBehaviour
         else if (horizontalAxis < 0)
         {
             rigidBody.AddForce(-transform.right * strafeSpeed, ForceMode2D.Force);
-        }
+        }*/
 
         float verticalAxis = Input.GetAxis("Vertical");
         if (verticalAxis > 0)
