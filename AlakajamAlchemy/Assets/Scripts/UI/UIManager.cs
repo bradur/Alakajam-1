@@ -24,7 +24,13 @@ public class UIManager : MonoBehaviour
 
     public void AddItem(InventoryItem item)
     {
-        uiInventoryManager.AddItem(item);
+        if (item.type == ItemType.Bolt)
+        {
+            UpdateCrossbowCount(item.count);
+        } else
+        {
+            uiInventoryManager.AddItem(item);
+        }
     }
 
     public void RemoveItem(InventoryItem item)
@@ -34,7 +40,18 @@ public class UIManager : MonoBehaviour
 
     public void UpdateItemCount(InventoryItem item, int count)
     {
-        uiInventoryManager.UpdateItemCount(item, count);
+        if (item.type == ItemType.Bolt)
+        {
+            UpdateCrossbowCount(count);
+        } else
+        {
+            uiInventoryManager.UpdateItemCount(item, count);
+        }
+    }
+
+    void UpdateCrossbowCount(int count)
+    {
+        rightHotbarItem.UpdateCount(count);
     }
 
     [SerializeField]

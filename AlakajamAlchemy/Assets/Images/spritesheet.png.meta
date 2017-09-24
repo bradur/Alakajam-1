@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e322510e2fa7ec7429e1ac830a3dd011
-timeCreated: 1506190479
+timeCreated: 1506242922
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,8 +9,8 @@ TextureImporter:
     21300004: spritesheet_1
     21300006: spritesheet_2
     21300008: spritesheet_3
-    21300010: spritesheet_4
-    21300012: spritesheet_5
+    21300010: water
+    21300012: tree
     21300014: spritesheet_6
     21300016: spritesheet_7
     21300018: spritesheet_8
@@ -124,7 +124,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,7 +138,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,6 +162,34 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: water
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tree
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 64
         height: 64

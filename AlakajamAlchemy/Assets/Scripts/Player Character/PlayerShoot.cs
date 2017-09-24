@@ -41,7 +41,7 @@ public class PlayerShoot : MonoBehaviour {
             pim.ConsumeOne(ItemType.Bolt);
             armsSr.enabled = false;
             crossBowArmsSr.enabled = true;
-            CrossbowBoltManager.main.SpawnBolt(boltPosition.position, transform.rotation);
+            CrossbowBoltManager.main.SpawnBolt(boltPosition.position, boltPosition.rotation);
         }
     }
 

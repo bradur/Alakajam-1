@@ -66,6 +66,10 @@ public class Mob : MonoBehaviour {
             getHitEffect.transform.rotation = transform.rotation;
         }
         Debug.Log("I took " + damageSource.Damage + " points of damage.");
+        if (damageSource.Type == DamageType.Bolt)
+        {
+            certainDrops.Add(ItemType.Bolt);
+        }
         if (hitPoints <= 0)
         {
             Debug.Log("I died because I have " + hitPoints + " HP!");

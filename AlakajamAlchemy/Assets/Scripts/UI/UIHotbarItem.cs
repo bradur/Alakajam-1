@@ -46,6 +46,11 @@ public class UIHotbarItem : MonoBehaviour {
         return false;
     }
 
+    public void UpdateCount (int count)
+    {
+        txtComponent.text = count + "";
+    }
+
     void Update ()
     {
         if (inUse)

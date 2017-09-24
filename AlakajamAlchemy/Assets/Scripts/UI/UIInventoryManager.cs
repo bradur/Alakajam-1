@@ -59,11 +59,12 @@ public class UIInventoryManager : MonoBehaviour {
 
     public void RemoveItem(InventoryItem item)
     {
-        Debug.Log(item.name);
-        UIInventoryItem uiInventoryItem = GetItem(item);
-        items.Remove(uiInventoryItem);
-        uiInventoryItem.Kill();
-        RenderItems();
+        if (item.type != ItemType.Bolt) { 
+            UIInventoryItem uiInventoryItem = GetItem(item);
+            items.Remove(uiInventoryItem);
+            uiInventoryItem.Kill();
+            RenderItems();
+        }
     }
 
     void RenderItems ()

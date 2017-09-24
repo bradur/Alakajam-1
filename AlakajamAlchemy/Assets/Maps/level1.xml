@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="64" tileheight="64" nextobjectid="67">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="64" tileheight="64" nextobjectid="67">
  <tileset firstgid="1" name="spritesheet" tilewidth="64" tileheight="64" tilecount="16" columns="4">
   <image source="../Images/spritesheet.png" width="256" height="256"/>
  </tileset>
  <tileset firstgid="17" name="flowersheet" tilewidth="64" tileheight="64" tilecount="16" columns="4">
   <image source="../Images/flowersheet.png" width="256" height="256"/>
  </tileset>
- <layer name="Grass" width="50" height="50">
+ <layer name="Ground" width="100" height="100">
   <properties>
    <property name="Type" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt0TEOACAMAkDq/x/t2t1BbW64sEKoJAUAAADwsNXc7nK6o+evpvwBAAAAAMyzAa4JCc0=
+   eJzt1zEOgzAQAEED//9zGqQEK/2txBTTn7zC+I611gEAAAAAAAAAAAAAAAAAAAAAAHA7f0zPwrfD3uMKzPZG5332enT8O3s99ECPov3sLz3Ge+ymZ+LZZnoOnk2mZ0CPKj06tGjRo0WPFj067B4tWrTo0aJHix4terTo0aJHix4ddsEWLVr0aNGjRY8O//IWLVr06NCiRY8WPTq8q1q0aNGjw13VokWLHi16tOjRokeLHi16tOjRYRds0aJFjw53VYsWHW/5Nj7NMCeo
   </data>
  </layer>
  <objectgroup name="Spawn">
   <properties>
    <property name="Type" value="1"/>
   </properties>
-  <object id="4" gid="16" x="1472" y="1472" width="64" height="64"/>
+  <object id="4" gid="16" x="3072" y="3072" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="Bunnies">
   <properties>
    <property name="Object" value="bunny"/>
    <property name="Type" value="2"/>
   </properties>
-  <object id="6" gid="15" x="1344" y="960" width="64" height="64"/>
-  <object id="7" gid="15" x="1408" y="960" width="64" height="64"/>
-  <object id="11" gid="15" x="1472" y="960" width="64" height="64"/>
-  <object id="12" gid="15" x="1536" y="960" width="64" height="64"/>
-  <object id="13" gid="15" x="1600" y="960" width="64" height="64"/>
-  <object id="14" gid="15" x="1664" y="960" width="64" height="64"/>
-  <object id="15" gid="15" x="1344" y="1024" width="64" height="64"/>
-  <object id="16" gid="15" x="1472" y="1024" width="64" height="64"/>
-  <object id="18" gid="15" x="1536" y="1024" width="64" height="64"/>
-  <object id="19" gid="15" x="1600" y="1024" width="64" height="64"/>
-  <object id="20" gid="15" x="1664" y="1024" width="64" height="64"/>
-  <object id="21" gid="15" x="1408" y="1024" width="64" height="64"/>
+  <object id="6" gid="15" x="2944" y="2560" width="64" height="64"/>
+  <object id="7" gid="15" x="3008" y="2560" width="64" height="64"/>
+  <object id="11" gid="15" x="3072" y="2560" width="64" height="64"/>
+  <object id="12" gid="15" x="3136" y="2560" width="64" height="64"/>
+  <object id="13" gid="15" x="3200" y="2560" width="64" height="64"/>
+  <object id="14" gid="15" x="3264" y="2560" width="64" height="64"/>
+  <object id="15" gid="15" x="2944" y="2624" width="64" height="64"/>
+  <object id="16" gid="15" x="3072" y="2624" width="64" height="64"/>
+  <object id="18" gid="15" x="3136" y="2624" width="64" height="64"/>
+  <object id="19" gid="15" x="3200" y="2624" width="64" height="64"/>
+  <object id="20" gid="15" x="3264" y="2624" width="64" height="64"/>
+  <object id="21" gid="15" x="3008" y="2624" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="Roses">
   <properties>
    <property name="Object" value="Rose"/>
    <property name="Type" value="2"/>
   </properties>
-  <object id="40" gid="18" x="640" y="1472" width="64" height="64"/>
-  <object id="41" gid="18" x="768" y="1408" width="64" height="64"/>
-  <object id="42" gid="18" x="832" y="1664" width="64" height="64"/>
-  <object id="43" gid="18" x="640" y="1856" width="64" height="64"/>
-  <object id="44" gid="18" x="384" y="1536" width="64" height="64"/>
-  <object id="45" gid="18" x="448" y="1408" width="64" height="64"/>
+  <object id="40" gid="18" x="2240" y="3072" width="64" height="64"/>
+  <object id="41" gid="18" x="2368" y="3008" width="64" height="64"/>
+  <object id="42" gid="18" x="2432" y="3264" width="64" height="64"/>
+  <object id="43" gid="18" x="2240" y="3456" width="64" height="64"/>
+  <object id="44" gid="18" x="1984" y="3136" width="64" height="64"/>
+  <object id="45" gid="18" x="2048" y="3008" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="Violets">
   <properties>
    <property name="Object" value="Violet"/>
    <property name="Type" value="2"/>
   </properties>
-  <object id="36" gid="17" x="256" y="384" width="64" height="64"/>
-  <object id="37" gid="17" x="448" y="320" width="64" height="64"/>
-  <object id="38" gid="17" x="448" y="448" width="64" height="64"/>
-  <object id="39" gid="17" x="256" y="640" width="64" height="64"/>
+  <object id="36" gid="17" x="1856" y="1984" width="64" height="64"/>
+  <object id="37" gid="17" x="2048" y="1920" width="64" height="64"/>
+  <object id="38" gid="17" x="2048" y="2048" width="64" height="64"/>
+  <object id="39" gid="17" x="1856" y="2240" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="Loti">
   <properties>
    <property name="Object" value="Lotus"/>
    <property name="Type" value="2"/>
   </properties>
-  <object id="50" gid="19" x="1216" y="2432" width="64" height="64"/>
-  <object id="51" gid="19" x="1472" y="2688" width="64" height="64"/>
-  <object id="52" gid="19" x="1664" y="2560" width="64" height="64"/>
-  <object id="53" gid="19" x="1664" y="2176" width="64" height="64"/>
-  <object id="54" gid="19" x="1408" y="2176" width="64" height="64"/>
-  <object id="55" gid="19" x="1408" y="2432" width="64" height="64"/>
+  <object id="50" gid="19" x="2816" y="4032" width="64" height="64"/>
+  <object id="51" gid="19" x="3072" y="4288" width="64" height="64"/>
+  <object id="52" gid="19" x="3264" y="4160" width="64" height="64"/>
+  <object id="53" gid="19" x="3264" y="3776" width="64" height="64"/>
+  <object id="54" gid="19" x="3008" y="3776" width="64" height="64"/>
+  <object id="55" gid="19" x="3008" y="4032" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="Orchids">
   <properties>
    <property name="Object" value="Orchid"/>
    <property name="Type" value="2"/>
   </properties>
-  <object id="62" gid="20" x="2176" y="448" width="64" height="64"/>
-  <object id="63" gid="20" x="2304" y="896" width="64" height="64"/>
-  <object id="64" gid="20" x="2176" y="960" width="64" height="64"/>
-  <object id="65" gid="20" x="2176" y="640" width="64" height="64"/>
-  <object id="66" gid="20" x="2304" y="640" width="64" height="64"/>
+  <object id="62" gid="20" x="3776" y="2048" width="64" height="64"/>
+  <object id="63" gid="20" x="3904" y="2496" width="64" height="64"/>
+  <object id="64" gid="20" x="3776" y="2560" width="64" height="64"/>
+  <object id="65" gid="20" x="3776" y="2240" width="64" height="64"/>
+  <object id="66" gid="20" x="3904" y="2240" width="64" height="64"/>
  </objectgroup>
 </map>
