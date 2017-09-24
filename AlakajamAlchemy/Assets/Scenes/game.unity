@@ -2580,7 +2580,7 @@ MonoBehaviour:
   txtComponent: {fileID: 0}
   colorVariable: {r: 0, g: 0, b: 0, a: 0}
   imgComponent: {fileID: 889624114}
-  cooldownTime: 0.1
+  cooldownTime: 2.03
 --- !u!1 &1833755412
 GameObject:
   m_ObjectHideFlags: 0
