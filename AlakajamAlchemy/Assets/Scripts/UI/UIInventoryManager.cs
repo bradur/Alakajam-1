@@ -59,7 +59,7 @@ public class UIInventoryManager : MonoBehaviour {
 
     public void RemoveItem(InventoryItem item)
     {
-        if (item.type != ItemType.Bolt) { 
+        if (item.type != ItemType.Bolt && item.type != ItemType.LovePotion) { 
             UIInventoryItem uiInventoryItem = GetItem(item);
             items.Remove(uiInventoryItem);
             uiInventoryItem.Kill();

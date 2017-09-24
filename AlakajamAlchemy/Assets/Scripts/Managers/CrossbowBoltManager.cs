@@ -8,6 +8,8 @@ using System.Collections;
 public class CrossbowBoltManager : MonoBehaviour {
 
     [SerializeField]
+    private CrossbowBolt enemyBoltPrefab;
+    [SerializeField]
     private CrossbowBolt boltPrefab;
     [SerializeField]
     private CrossbowBolt potionPrefab;
@@ -28,6 +30,17 @@ public class CrossbowBoltManager : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+
+    public void SpawnEnemyBolt(Vector3 startingPosition, Quaternion rotation)
+    {
+        CrossbowBolt newBolt = Instantiate(enemyBoltPrefab);
+        newBolt.transform.SetParent(container, false);
+        newBolt.transform.position = startingPosition;
+        newBolt.transform.rotation = rotation;
+        newBolt.Shoot();
+    }
+
 
     public void SpawnBolt (Vector3 startingPosition, Quaternion rotation)
     {

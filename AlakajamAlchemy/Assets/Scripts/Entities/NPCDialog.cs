@@ -71,11 +71,14 @@ public class NPCDialog : MonoBehaviour
     private bool activeDialog = false;
     private bool questDone = false;
 
+    private GameObject secretMobs;
+
     private GameObject playerObject;
 
     private void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
+        secretMobs = UIManager.main.GetSecretMobs;
     }
 
     private bool PlayerIsWithinTalkingDistance()
@@ -134,6 +137,7 @@ public class NPCDialog : MonoBehaviour
                 {
                     questDone = true;
                     ItemManager.main.DropItems(rewards, transform.position, true);
+                    secretMobs.SetActive(true);
                 } else
                 {
                     pim.Consume(dialog.requirementToAdvance.items);

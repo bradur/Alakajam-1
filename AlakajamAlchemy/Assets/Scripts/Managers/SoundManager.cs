@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour {
 
     [SerializeField]
     private bool musicMuted = false;
+    public bool MusicMuted { get { return musicMuted; } }
 
     [SerializeField]
     private AudioSource musicSource;
@@ -60,7 +61,7 @@ public class SoundManager : MonoBehaviour {
         UIManager.main.ToggleSfx();
     }
 
-    public void ToggleMusic()
+    public bool ToggleMusic()
     {
         musicMuted = !musicMuted;
         if (musicMuted)
@@ -71,7 +72,8 @@ public class SoundManager : MonoBehaviour {
         {
             musicSource.Play();
         }
-        UIManager.main.ToggleMusic();
+        //UIManager.main.ToggleMusic();
+        return musicMuted;
     }
 }
 

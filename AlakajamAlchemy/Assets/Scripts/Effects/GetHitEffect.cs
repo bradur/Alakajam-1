@@ -17,6 +17,9 @@ public class GetHitEffect : MonoBehaviour {
 
     private bool isPlaying = false;
 
+    [SerializeField]
+    private bool dontPause = false;
+
     void Start () {
         particleEffect = GetComponent<ParticleSystem>();
         particleEffect.Play();
@@ -30,7 +33,10 @@ public class GetHitEffect : MonoBehaviour {
             if (particleTimer >= particleLifeTime)
             {
                 isPlaying = false;
-                particleEffect.Pause();
+                if (!dontPause)
+                {
+                    particleEffect.Pause();
+                }
                 particleTimer = 0f;
             }
         }

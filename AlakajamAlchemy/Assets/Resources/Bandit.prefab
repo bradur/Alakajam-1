@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4757508105251182}
   - component: {fileID: 212084317635897298}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4158501837669634}
   - component: {fileID: 60906749047261654}
   - component: {fileID: 114247376157109272}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwingCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4045506792281490}
   - component: {fileID: 212321630837558080}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,8 @@ GameObject:
   - component: {fileID: 95794216933796568}
   - component: {fileID: 114704127064707922}
   - component: {fileID: 114533436338905534}
-  m_Layer: 0
+  - component: {fileID: 114527318100839206}
+  m_Layer: 12
   m_Name: Bandit
   m_TagString: Mob
   m_Icon: {fileID: 0}
@@ -90,7 +91,7 @@ GameObject:
   - component: {fileID: 4504869009325960}
   - component: {fileID: 60141325686988420}
   - component: {fileID: 114452238848826990}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwingCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +106,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4563205478669316}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShootOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4865256249056918}
   - component: {fileID: 212855052214185810}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Swing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +139,7 @@ GameObject:
   - component: {fileID: 4493727037188530}
   - component: {fileID: 60029330243481416}
   - component: {fileID: 114882549417353702}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwingCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4498533642808370}
   - component: {fileID: 212840714072092102}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ArmShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,6 +469,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   damageType: 2
+--- !u!114 &114527318100839206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593926471333086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f63f0efdfb55564da28c9be65574f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boltPosition: {fileID: 4563205478669316}
+  armsSr: {fileID: 212084317635897298}
+  crossBowArmsSr: {fileID: 212840714072092102}
+  arms: {fileID: 212084317635897298}
 --- !u!114 &114533436338905534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -498,11 +514,15 @@ MonoBehaviour:
   hitPoints: 5
   getHitEffectPrefab: {fileID: 114988201679394510, guid: 04762118147f5284398965c7c56de111,
     type: 2}
+  loveEffect: {fileID: 114988201679394510, guid: 15f896c95e02d5a44b88052fd155f674,
+    type: 2}
   certainDrops: 07000000
   willFlee: 0
   damageInterval: 0.216
   breedInterval: 2
   maxBreedCount: 1
+  angryColor: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
+  damage: 1
 --- !u!114 &114882549417353702
 MonoBehaviour:
   m_ObjectHideFlags: 1

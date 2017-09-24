@@ -17,6 +17,7 @@ TagManager:
   - ItemManager
   - InventoryManager
   - Flower
+  - SecretMobs
   layers:
   - Default
   - TransparentFX
@@ -29,8 +30,8 @@ TagManager:
   - Player
   - Damage
   - Item
-  - 
-  - 
+  - EnemyBolt
+  - Enemy
   - 
   - 
   - 

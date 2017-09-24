@@ -15,7 +15,12 @@ public enum Action
     ShootBow,
     SwingSword,
     Talk,
-    UsePotion
+    UsePotion,
+    Quit,
+    Restart,
+    OpenMenu,
+    CloseMenu,
+    ToggleMusic
 }
 
 [System.Serializable]

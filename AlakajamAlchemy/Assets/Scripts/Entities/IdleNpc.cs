@@ -35,10 +35,15 @@ public class IdleNpc : MonoBehaviour {
 
     private bool moving = false;
 
+    private Bandit bandit;
+
     void Start () {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        mob = GetComponent<Mob>();
+        playerObject = GameObject.FindGameObjectWithTag("Player");
         RandomMove();
+        bandit = GetComponent<Bandit>();
     }
 
     void StartMoving (ForceMode2D forceMode, float moveSpeed)
@@ -67,10 +72,22 @@ public class IdleNpc : MonoBehaviour {
         idle = true;
     }
 
+    private Mob mob;
+    private GameObject playerObject;
+
     void RandomizeDirection ()
     {
-        Vector3 randomDirection = new Vector3(0f, 0f, transform.localEulerAngles.z + Random.Range(10f, 45f));
-        transform.Rotate(randomDirection);
+        if (mob != null && mob.IsAngry())
+        {
+            transform.up = ((Vector2)playerObject.transform.position - (Vector2)transform.position).normalized;
+            if (bandit != null)
+            {
+                bandit.Shoot();
+            }
+        } else {
+            Vector3 randomDirection = new Vector3(0f, 0f, transform.localEulerAngles.z + Random.Range(10f, 45f));
+            transform.Rotate(randomDirection);
+        }
     }
 
     public void RandomMove ()

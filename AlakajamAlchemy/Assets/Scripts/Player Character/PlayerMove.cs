@@ -69,4 +69,20 @@ public class PlayerMove : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.layer == LayerMask.NameToLayer("EnemyBolt"))
+        {
+            DamageSource damage = collider.gameObject.GetComponent<DamageSource>();
+            UIManager.main.AddHp(-damage.Damage);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("EnemyBolt"))
+        {
+            DamageSource damage = collision.gameObject.GetComponent<DamageSource>();
+            UIManager.main.AddHp(-damage.Damage);
+        }
+    }
 }

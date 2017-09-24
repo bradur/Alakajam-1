@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114809511812515690}
   - component: {fileID: 50497470000174390}
   - component: {fileID: 70101093067343420}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Frog
   m_TagString: Mob
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4037098016415400}
   - component: {fileID: 212761207041478112}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: frogidle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,11 +156,15 @@ MonoBehaviour:
   hitPoints: 6
   getHitEffectPrefab: {fileID: 114988201679394510, guid: 462122ade1fceda42ba541cd2b30b3ff,
     type: 2}
+  loveEffect: {fileID: 114988201679394510, guid: 15f896c95e02d5a44b88052fd155f674,
+    type: 2}
   certainDrops: 08000000
   willFlee: 1
   damageInterval: 0.429
   breedInterval: 2
   maxBreedCount: 2
+  angryColor: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
+  damage: 1
 --- !u!212 &212761207041478112
 SpriteRenderer:
   m_ObjectHideFlags: 1

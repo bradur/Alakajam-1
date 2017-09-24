@@ -42,6 +42,7 @@ public class CrossbowBolt : MonoBehaviour
         {
             gameObject.layer = LayerMask.NameToLayer("Item");
             GetComponent<SpriteOutline>().color = inactiveColor;
+            Destroy(GetComponent<DamageSource>());
             Destroy(this);
         }
     }

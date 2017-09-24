@@ -11,9 +11,13 @@ public class Mob : MonoBehaviour {
     [SerializeField]
     [Range(1, 50)]
     private int hitPoints = 5;
+    public int HitPoints { set { hitPoints = value; } }
 
     [SerializeField]
     private GetHitEffect getHitEffectPrefab;
+
+    [SerializeField]
+    private GetHitEffect loveEffect;
 
     [SerializeField]
     private List<ItemType> certainDrops;
@@ -39,12 +43,15 @@ public class Mob : MonoBehaviour {
     [Range(1, 20)]
     private int maxBreedCount = 5;
 
+    [SerializeField]
+    private Color angryColor = Color.red;
+    GameObject playerObject;
     private void Start()
     {
-        if (willFlee)
-        {
-            npc = GetComponent<IdleNpc>();
-        }
+        bandit = GetComponent<Bandit>();
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+
+        npc = GetComponent<IdleNpc>();
     }
 
     private void Update()
@@ -73,13 +80,65 @@ public class Mob : MonoBehaviour {
                 }
             }
         }
+        if (bandit != null && !angry)
+        {
+            if (Vector2.Distance(transform.position, playerObject.transform.position) < 5f)
+            {
+                Angry();
+            }
+        }
     }
 
     void Breed ()
     {
         Mob newMob = Instantiate(this);
-        newMob.transform.localScale *= 0.5f;
-        newMob.transform.position = transform.position - Vector3.up;
+        newMob.transform.localScale *= 0.75f;
+        newMob.transform.position = transform.position;
+        if (angry)
+        {
+            newMob.Angry();
+        }
+        newMob.HitPoints = 1;
+    }
+
+    public bool IsAngry()
+    {
+        return angry;
+    }
+
+    public void Angry()
+    {
+        angry = true;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.color = angryColor;
+        }
+        foreach (Transform child in transform)
+        {
+            sr = child.gameObject.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.color = angryColor;
+            }
+        }
+    }
+
+    [SerializeField]
+    [Range(1, 10)]
+    private int damage = 1;
+
+    private Bandit bandit;
+
+    void Bite ()
+    {
+        if (bandit != null)
+        {
+            bandit.Swing();
+        } else
+        {
+            UIManager.main.AddHp(-damage);
+        }
     }
 
     public void GetHit(DamageSource damageSource)
@@ -88,6 +147,7 @@ public class Mob : MonoBehaviour {
         {
             return;
         }
+        Angry();
         takingDamage = true;
         hitPoints -= damageSource.Damage;
         if (getHitEffectPrefab != null)
@@ -134,13 +194,34 @@ public class Mob : MonoBehaviour {
         CrossbowBolt bolt = collider.gameObject.GetComponent<CrossbowBolt>();
         if (bolt != null && bolt.IsPotion)
         {
-            Debug.Log("Breeding");
             StartBreeding();
         }
     }
 
+    private bool angry = false;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (angry)
+            {
+                Bite();
+            }
+        }
+    }
+
+    private bool hitByPotion = false;
     void StartBreeding ()
     {
-        breeding = true;
+        if (!hitByPotion)
+        {
+            hitByPotion = true;
+            GetHitEffect newLoveEffect = Instantiate(loveEffect);
+            newLoveEffect.transform.SetParent(transform);
+            newLoveEffect.transform.position = transform.position;
+            newLoveEffect.transform.rotation = transform.rotation;
+            breeding = true;
+        }
     }
 }

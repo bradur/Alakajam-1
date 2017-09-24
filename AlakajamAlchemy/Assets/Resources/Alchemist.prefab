@@ -301,16 +301,20 @@ MonoBehaviour:
   - messages:
     - Your potion is ready!
     idleMessages:
-    - Here's your potion. What will you do with it?
-    - '...'
+    - I'm immune to the potion. Of course!
+    - Try it on some of the fauna, perhaps?
+    - The bandits will possibly like the potion as well.
+    - This is the end of the game, by the way. But you can have fun with the potion!
+    - You may quit at any time through the menu, by pressing Esc.
     type: 9
-    finishMessage: 'Think of the possibilities!
+    finishMessage: 'Here''s your potion. What will you do with it?
 
-'
+      Oh! Would you look at that? Where did those bunnies and frogs and bandits come
+      from? I thought you killed them all!'
     requirementToAdvance:
       items: []
     lastMessage: 1
-  currentDialog: 4
+  currentDialog: 0
   rewards:
   - name: Love Potion
     sprite: {fileID: 21300010, guid: 400dd301238b83f4996cf6a10fa5a20b, type: 3}
